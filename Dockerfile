@@ -12,8 +12,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Usar pip com python -m para garantir o ambiente correto
-RUN pip install --no-cache-dir \
+# Ativar o venv e instalar os pacotes
+RUN . /app/.venv/bin/activate && pip install --no-cache-dir \
     psycopg2-binary \
     pymongo \
     pymssql \
