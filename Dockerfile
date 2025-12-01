@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Instalar diretamente no venv usando o Python do Superset
-RUN /app/.venv/bin/python -m pip install --no-cache-dir \
+# Instalar pip no venv e depois os pacotes
+RUN /app/.venv/bin/python -m ensurepip --upgrade && \
+    /app/.venv/bin/python -m pip install --no-cache-dir \
     psycopg2-binary \
     pymongo \
     pymssql \
