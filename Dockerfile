@@ -1,5 +1,4 @@
 FROM apache/superset:latest
-
 USER root
 
 RUN apt-get update && apt-get install -y \
@@ -13,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install \
+# Instalar no venv do Superset
+RUN /app/.venv/bin/pip install \
     psycopg2-binary \
     pymongo \
     pymssql \
@@ -33,5 +33,4 @@ ENV SUPERSET_CONFIG_PATH /app/superset_config.py
 ENV SECRET_KEY $SECRET_KEY
 
 USER superset
-
 ENTRYPOINT [ "./superset_init.sh" ]
