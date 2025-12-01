@@ -5,8 +5,12 @@ USER root
 RUN apt-get update && apt-get install -y \
     pkg-config \
     libmariadb-dev \
-    default-libmysqlclient-dev \
-    build-essential \
+    unixodbc \
+    unixodbc-dev \
+    libpq-dev \
+    gcc \
+    g++ \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install \
