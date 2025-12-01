@@ -2,9 +2,18 @@ import os
 
 FEATURE_FLAGS = {
     "ENABLE_TEMPLATE_PROCESSING": True,
+    "EMBEDDED_SUPERSET": True,
+    "EMBEDDABLE_CHARTS": True,
 }
 
+TALISMAN_ENABLED = False
+PUBLIC_ROLE_LIKE = "Gamma" 
+
 ENABLE_PROXY_FIX = True
+
+HTTP_HEADERS = {
+    "X-Frame-Options": "ALLOWALL",
+}
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
