@@ -24,7 +24,7 @@ GUEST_TOKEN_JWT_ALGO = "HS256"
 GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
 GUEST_TOKEN_JWT_EXP_SECONDS = 300
 
-MAPBOX_API_KEY = "sk.eyJ1IjoiZWx6ZXZpcnNhIiwiYSI6ImNtaW8ycnE1OTJpcHgza3BzZjQyYXdzdW8ifQ.6ebQJHdk_HYpsP5E6TUnYQ"
+MAPBOX_API_KEY = os.environ.get("MAPBOX_API_KEY")
 
 CORS_OPTIONS = {
     'supports_credentials': True,
