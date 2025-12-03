@@ -32,3 +32,9 @@ CORS_OPTIONS = {
     'resources': ['*'],
     'origins': ['*']
 }
+
+LANGUAGES = {
+    'en': {'flag': 'us', 'name': 'English'},
+    'zh': {'flag': 'cn', 'name': 'Chinese'},
+    'pt_BR': {'flag': 'br', 'name': 'Português (Brasil)'},
+}
